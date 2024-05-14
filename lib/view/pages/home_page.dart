@@ -1,12 +1,13 @@
 import 'package:bytesonline_machinetest/controller/provider/product_provider.dart';
 import 'package:bytesonline_machinetest/core/constants/constants.dart';
+import 'package:bytesonline_machinetest/view/widgets/home_shimmer.dart';
 import 'package:bytesonline_machinetest/view/widgets/product_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class ProductPage extends ConsumerWidget {
-  const ProductPage({super.key});
+class HomePage extends ConsumerWidget {
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -35,7 +36,7 @@ class ProductPage extends ConsumerWidget {
                   child: Text(Constants.error),
                 );
               } else {
-                return const LinearProgressIndicator();
+                return const homePageShimmer();
               }
             }));
   }
